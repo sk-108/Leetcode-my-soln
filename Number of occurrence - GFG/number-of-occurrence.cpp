@@ -12,14 +12,14 @@ public:
 		of occurrences of x, otherwise returns 0. */
 	int count(int arr[], int n, int x) {
 	    // code here
-	    int count = 0;
-	    for(int i=0;i<n;i++)
+	    int left = lower_bound(arr,arr+n,x)-arr;
+	    if(left == n)
 	    {
-	        if(arr[i] == x)
-	        {
-	            count++;
-	        }
+	        return 0;
 	    }
+	    int right = upper_bound(arr,arr+n,x)-arr;
+	    
+	    int count = right - left;
 	    return count;
 	}
 };
