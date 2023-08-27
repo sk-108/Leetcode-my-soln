@@ -14,8 +14,14 @@ class Solution
     public:
     string reverseWord(string str)
     {
-        // Your code goes here
-        reverse(str.begin(),str.end());
+        int i=0;
+        int l = str.size()-1;
+        while(i<l)
+        {
+            swap(str[i],str[l]);
+            i++;
+            l--;
+        }
         return str;
     }
 };
